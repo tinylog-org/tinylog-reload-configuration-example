@@ -10,3 +10,7 @@ Steps for enabling reconfiguration:
 2. Create a custom no-op writer that doesn't output anything, but can be used in the tinylog configuration to prevent JVM runtime optimizations that would prevent reconfiguration otherwise: [BlackHoleWriter.java](src/main/java/demo/BlackHoleWriter.java)
 3. Register the custom logging provider and custom no-op writer in [META-INF/services](src/main/resources/META-INF/services) and in your [tinylog.properties](src/main/resources/tinylog.properties).
 4. Happy reconfigurable logging for you [application](src/main/java/demo/Application.java) :)
+
+Limitations:
+
+- The writing thread must be not enabled
